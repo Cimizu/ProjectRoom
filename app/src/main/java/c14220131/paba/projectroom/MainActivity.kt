@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     private lateinit var DB : daftarBelanjaDB
@@ -47,6 +48,22 @@ class MainActivity : AppCompatActivity() {
             Log.d("data ROOM", daftarBelanja.toString())
             adapterDaftar.isiData(daftarBelanja)
         }
+
+        adapterDaftar.setOnItemClickCallback(
+            object : adapterDaftar.OnItemClickCallback{
+                override fun detData(dtBelanja: daftarBelanja){
+                    CoroutineScope(Dispatchers.IO).async {
+                        DB.fundaftarBelanjaDAO().delete(dtBelanja)
+                        val daftar = DB.fundaftarBelanjaDAO().selectAll()
+                        withContext(Dispatchers.Main){
+                            adapterDaftar.isiData(daftar)
+                        }
+                    }
+                }
+
+            })
+
     }
+
 
 }

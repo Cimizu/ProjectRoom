@@ -33,8 +33,8 @@ class adapterDaftar (private val daftarBelanja : MutableList<daftarBelanja>): Re
         var _tvTanggaal = itemView.findViewById<TextView>(R.id.tanggal)
         var _tvItemBarang = itemView.findViewById<TextView>(R.id.Item)
         var _tvjumlahBarang = itemView.findViewById<TextView>(R.id.jumlah)
-        var _btnEdit = itemView.findViewById<Button>(R.id.btnEdit)
-        var _btnDelete = itemView.findViewById<Button>(R.id.btnDelete)
+        var _btnEdit = itemView.findViewById<ImageView>(R.id.btnUpdate)
+        var _btnDelete = itemView.findViewById<ImageView>(R.id.btnDelete)
     }
     override fun getItemCount(): Int {
         return daftarBelanja.size
