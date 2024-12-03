@@ -35,7 +35,7 @@ class TambahDaftar : AppCompatActivity() {
         val _btnTambah = findViewById<Button>(R.id.btnTambah)
         var _btnUpdate = findViewById<Button>(R.id.btnUpdate)
         iID = intent.getIntExtra("id",0)
-        iAddEdit = intent.getIntExtra("aaddEdit",0)
+        iAddEdit = intent.getIntExtra("addEdit",0)
 
         if (iAddEdit==0){
             _btnTambah.visibility = View.VISIBLE
@@ -77,6 +77,7 @@ class TambahDaftar : AppCompatActivity() {
                     isi_status = 0
                 )
             }
+            finish()
         }
 
     }

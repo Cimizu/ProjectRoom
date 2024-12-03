@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var DB : daftarBelanjaDB
     private lateinit var adapterDaftar: adapterDaftar
     private var arDaftar : MutableList<daftarBelanja> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         adapterDaftar = adapterDaftar(arDaftar)
         super.onCreate(savedInstanceState)
@@ -42,12 +43,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, TambahDaftar::class.java))
         }
 
-        super.onStart()
-        CoroutineScope(Dispatchers.Main).async {
-            val daftarBelanja = DB.fundaftarBelanjaDAO().selectAll()
-            Log.d("data ROOM", daftarBelanja.toString())
-            adapterDaftar.isiData(daftarBelanja)
-        }
+
 
         adapterDaftar.setOnItemClickCallback(
             object : adapterDaftar.OnItemClickCallback{
@@ -63,6 +59,15 @@ class MainActivity : AppCompatActivity() {
 
             })
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        CoroutineScope(Dispatchers.Main).async {
+            val daftarBelanja = DB.fundaftarBelanjaDAO().selectAll()
+            Log.d("data ROOM", daftarBelanja.toString())
+            adapterDaftar.isiData(daftarBelanja)
+        }
     }
 
 
