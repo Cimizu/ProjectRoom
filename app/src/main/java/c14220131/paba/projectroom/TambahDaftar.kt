@@ -41,6 +41,7 @@ class TambahDaftar : AppCompatActivity() {
                     )
                 )
             }
+            finish()
         }
 
     }
