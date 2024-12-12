@@ -37,37 +37,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Item" />
 
-    <ImageView
-        android:id="@+id/btnUpdate"
-        android:layout_width="37dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/edit"
-        app:layout_constraintBottom_toBottomOf="@+id/btnDelete"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-        app:layout_constraintTop_toTopOf="@+id/btnDelete"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/btnDelete"
-        android:layout_width="44dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="28dp"
-        android:src="@drawable/delete"
-        app:layout_constraintBottom_toBottomOf="@+id/Item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnDone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="DONE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnUpdate"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

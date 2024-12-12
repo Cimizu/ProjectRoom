@@ -16,6 +16,7 @@ class adapterDaftar (private val daftarBelanja : MutableList<daftarBelanja>): Re
 
     interface OnItemClickCallback{
         fun detData(dtBelanja: daftarBelanja)
+        fun selesaiData(dtBelanja: daftarBelanja)
     }
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
         this.onItemClickCallback = onItemClickCallback
@@ -35,6 +36,7 @@ class adapterDaftar (private val daftarBelanja : MutableList<daftarBelanja>): Re
         var _tvjumlahBarang = itemView.findViewById<TextView>(R.id.jumlah)
         var _btnEdit = itemView.findViewById<ImageView>(R.id.btnUpdate)
         var _btnDelete = itemView.findViewById<ImageView>(R.id.btnDelete)
+        var _btnDone = itemView.findViewById<Button>(R.id.btnDone)
     }
     override fun getItemCount(): Int {
         return daftarBelanja.size
@@ -61,6 +63,9 @@ class adapterDaftar (private val daftarBelanja : MutableList<daftarBelanja>): Re
         }
         holder._btnDelete.setOnClickListener {
             onItemClickCallback.detData(daftar)
+        }
+        holder._btnDone.setOnClickListener {
+            onItemClickCallback.selesaiData(daftar)
         }
     }
 }

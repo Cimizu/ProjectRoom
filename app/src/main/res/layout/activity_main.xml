@@ -8,6 +8,18 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        app:layout_constraintBottom_toBottomOf="@+id/fabAdd"
+        app:layout_constraintEnd_toStartOf="@+id/fabAdd"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fabAdd"
+        app:layout_constraintVertical_bias="1.0" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNotes"
         android:layout_width="409dp"
